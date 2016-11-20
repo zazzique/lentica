@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_dark">
+
+    <FrameLayout
+        android:id="@+id/cameraViewFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <com.example.zazzique.lentica.CameraView
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/shutterFlash"
+            android:src="#ffffff"
+            android:alpha="0" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/flashButton"
+            android:src="@drawable/ic_flash_auto_white_24dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="right|bottom"
+            android:padding="8dp"
+            android:onClick="onFlashButton"
+            android:alpha="0.5" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/expLockButton"
+            android:src="@drawable/ic_lock_open_white_24dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="center|bottom"
+            android:padding="8dp"
+            android:onClick="onExposureLockButton"
+            android:alpha="0.5" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switchCameraButton"
+            android:src="@drawable/ic_loop_white_24dp"
+            android:layout_margin="8dp"
+            android:layout_gravity="left|bottom"
+            android:padding="8dp"
+            android:onClick="onSwitchCameraButton"
+            android:alpha="0.5" />
+    </FrameLayout>
+
+    <com.example.zazzique.lentica.PhotoStripView
+        android:id="@+id/photoStripView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cameraViewFrame"
+        android:background="@android:color/background_dark" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:background="@android:color/background_dark"
+        android:id="@+id/bottomBar"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/galleryButton"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_view_module_white_24dp"
+            android:onClick="onGalleryButton"
+            android:scaleType="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/composeButton"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_extension_white_24dp"
+            android:onClick="onComposeButton"
+            android:scaleType="center" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_dark"
+        android:layout_below="@id/photoStripView"
+        android:layout_above="@id/bottomBar">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:id="@+id/takePhotoButton"
+            android:onClick="onTakePhotoButton"
+            android:src="@drawable/take_photo"
+            android:scaleType="center" />
+    </FrameLayout>
+</RelativeLayout>

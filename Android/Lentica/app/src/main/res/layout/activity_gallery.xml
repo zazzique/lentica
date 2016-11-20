@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_dark">
+
+    <com.example.zazzique.lentica.LenticularView
+        android:id="@+id/lenticularView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+
+    <GridView
+        android:id="@+id/lenticularGalleryView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="4"
+        android:verticalSpacing="4dp"
+        android:horizontalSpacing="4dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:layout_below="@id/lenticularView"
+        android:layout_above="@id/bottomBar"
+        android:layout_margin="4dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:background="@android:color/background_dark"
+        android:id="@+id/bottomBar"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/composeButton"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_extension_white_24dp"
+            android:onClick="onComposeButton"
+            android:scaleType="center" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/cameraButton"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_camera_alt_white_24dp"
+            android:onClick="onCameraButton"
+            android:scaleType="center" />
+
+    </LinearLayout>
+
+</RelativeLayout>
